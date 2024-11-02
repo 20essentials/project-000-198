@@ -1,0 +1,99 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  place-content: start;
+  transition: background-color 0.4s ease;
+  animation: changeColor 0.5s linear infinite alternate both;
+
+  .square {
+    width: 1.25vw;
+    height: 1.25vw;
+    border: 1px solid #0004;
+    transform: rotate(285deg);
+    flex-grow: 1;
+
+    @media (width <= 1111px) and (orientation: portrait) {
+      width: 3.5vw;
+      height: 3.5vw;
+    }
+
+    &:nth-child(9n + 0) {
+      background-color: var(--n1);
+    }
+    &:nth-child(9n + 1) {
+      background-color: var(--n2);
+    }
+    &:nth-child(9n + 2) {
+      background-color: var(--n3);
+    }
+    &:nth-child(9n + 3) {
+      background-color: var(--n4);
+    }
+    &:nth-child(9n + 4) {
+      background-color: var(--n5);
+    }
+    &:nth-child(9n + 5) {
+      background-color: var(--n6);
+    }
+    &:nth-child(9n + 6) {
+      background-color: var(--n7);
+    }
+    &:nth-child(9n + 7) {
+      background-color: var(--n8);
+    }
+    &:nth-child(9n + 8) {
+      background-color: var(--n9);
+    }
+    &:nth-child(9n + 9) {
+      background-color: var(--n10);
+    }
+  }
+}
+
+.container-1 {
+  .square {
+    border: 1px solid transparent;
+  }
+}
+
+.container-2 {
+  transform: rotateX(180deg);
+}
+
+@keyframes changeColor {
+  0% {
+    --n1: #ffe700;
+    --n3: #ffe700;
+    --n5: #ffe700;
+    --n7: #ffe700;
+    --n9: #ffe700;
+  }
+  100% {
+    --n2: #ffe700;
+    --n4: #ffe700;
+    --n6: #ffe700;
+    --n8: #ffe700;
+    --n10: #ffe700;
+  }
+}
