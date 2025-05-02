@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background PtP</title>
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+  </head>
+
+  <body>
+    <script id="template" type="text/x-handlebars-template">
+      <div class="container container-1">
+        {{#each squares}}
+          <div class="square"></div>
+        {{/each}}
+      </div>
+      <div class="container container-2">
+        {{#each squares}}
+          <div class="square"></div>
+        {{/each}}
+      </div>
+    </script>
+
+    <script>
+      const templateSource = document.getElementById("template").innerHTML;
+      const template = Handlebars.compile(templateSource);
+      const N_SQUARES = 6000;
+      const squares = Array(N_SQUARES);
+      const html = template({ squares });
+      document.body.innerHTML = html;
+    </script>
+  </body>
+</html>
