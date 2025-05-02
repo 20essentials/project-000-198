@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background PtP</title>
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Background PtP</title>
-  <meta name="google" content="notranslate">
-  <link rel="shortcut icon" href="assets/favicon.webp" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <div class="container container-1"></div>
+    <div class="container container-2"></div>
 
-<body>
-  <div class="container container-1"></div>
-  <div class="container container-2"></div>
-  <script src="script.js"></script>
-</body>
+    <script>
+      const container1 = document.querySelector('.container-1');
+      const container2 = document.querySelector('.container-2');
 
+      const N_SQUARES = 6000;
+
+      function addSquares(container, N_SQUARES) {
+        for (let i = 0; i < N_SQUARES; i++) {
+          const $square = document.createElement('div');
+          $square.classList.add('square');
+          container.appendChild($square);
+        }
+      }
+
+      addSquares(container1, N_SQUARES);
+      addSquares(container2, N_SQUARES);
+    </script>
+  </body>
 </html>
